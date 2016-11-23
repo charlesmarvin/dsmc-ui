@@ -1,0 +1,17 @@
+#hero {
+	padding-top: 84px;
+	padding-bottom: 56px;
+	text-align: center;
+}
+#root {
+	margin: auto;
+ 	max-width: 1200px;
+}
+.login-form {
+	text-align: left
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
