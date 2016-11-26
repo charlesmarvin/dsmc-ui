@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-//import { loadProfile } from './actions';
+import { loadDashboard } from './actions';
 	
 class Dashboard extends Component {
 	componentWillMount() {
-		//this.props.dispatch(loadProfile());
+      this.props.dispatch(loadDashboard());
 	}
   
     renderSession(session, index, data) {
@@ -16,7 +16,7 @@ class Dashboard extends Component {
             </div>
             <div className="col-xs-12 col-sm-10">
               <div className="student-info">
-                <span className="student-name">{session.student}</span>
+                <span className="student-name">{session.studentName}</span>
                 <span className="phone">{session.studentContact}</span>
                 <span className="address">{session.pickupLocation}</span>
               </div>

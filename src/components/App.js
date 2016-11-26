@@ -8,19 +8,23 @@ class App extends Component {
   render() {
     return (
     	<div className="wrap">
-          <nav className="header">
-              <div className="logo">
-                <Link to="/">WHEELS</Link>
-         </div>
-              <Breadcrumbs routes={this.props.routes} params={this.props.params} createSeparator=" / " />
-          </nav>
-          <div className="main">
-            <div className="row">
-              <div className="col-xs col-sm-offset-2 col-sm-10">
-                {this.props.children}
-              </div>
+          <div className="row nav">
+            <div className="col-xs-4 col-sm-2 logo">
+              <Link to="/">WHEELS</Link>
             </div>
-            
+            <div className="col-xs-12 last-xs col-sm-7">
+              <Breadcrumbs routes={this.props.routes} params={this.props.params} createSeparator=" / " />
+            </div>
+            <div className="col-xs-8 col-sm-3 last-sm text-right">
+              <Link to="">Profile</Link>
+              <Link to="">Sign off</Link>
+            </div>
+          </div>
+              
+          <div className="row main">
+            <div className="col-xs col-sm-offset-2 col-sm-10">
+              {this.props.children}
+            </div>
           </div>
           <NavActionLauncher/>
         </div>

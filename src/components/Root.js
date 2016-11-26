@@ -7,6 +7,7 @@ import Error from './Error';
 import LoginView from './auth/LoginForm';
 import VerifyView from './auth/VerifyAccountForm';
 import Dashboard from './dashboard/Dashboard';
+import StudentList from './students/StudentList';
 
 const requireAuth = (store) => {
 	return (nextState, replace) => {
@@ -29,6 +30,7 @@ const Root = ({store}) => {
                   <IndexRoute component={Dashboard} name="Dashboard" /> //onEnter={requireAuth(store)}
                   <Route path="error" component={Error} />
                   <Route path="login" component={LoginView} name="Login" />
+                  <Route path="students" component={StudentList} name="Students" />
                   <Route path="sessions" component={() => (<div>Sessions!</div>)} name="Sessions">
                     <Route path="schedule" component={() => (<div>Schedule Session!!</div>)} name="Schedule"/>
                   </Route>
