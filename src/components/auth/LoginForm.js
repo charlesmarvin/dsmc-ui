@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 import { login } from './actions';
 	
 class LoginForm extends Component {
@@ -13,10 +11,10 @@ class LoginForm extends Component {
 	validate() {
 		let username = null, password = null;
 		if(!this.state.username || !this.state.username.trim().length) {
-				username: "Required";
+				username = "Required";
 		}
 		if(!this.state.password || !this.state.password.trim().length) {
-				password: "Required";
+				password = "Required";
 		}
 		this.setState({
 			errors: {
@@ -39,29 +37,29 @@ class LoginForm extends Component {
 			loginBtnText = 'Signing in...';
 		}
 		return (
-			<div className="row center-xs">
-				<div className="col-xs-10 col-sm-4 col-md-3">
-					<form className="form login-form" onSubmit={e => this.submit(e)} >
-						<TextField
-				      hintText="Username"
-				      floatingLabelText="Username"
-				      errorText={this.state.errors.username}
-				      fullWidth={true}
-				      onChange={e => this.setState({ username: e.target.value })}
-				    />
-
-				    <TextField
-				      hintText="Password"
-				      floatingLabelText="Password"
-				      type="password"
-				      errorText={this.state.errors.password}
-				      fullWidth={true}
-				      onChange={e => this.setState({ password: e.target.value })}
-				    />
+			<div className="row">
+				<div className="col-xs">
+					<form className="content" onSubmit={e => this.submit(e)} >
+          <div className="row">
+            <div className="col-xs">
+            <label>
+              Username:
+              <input type="text" name="username" value={this.state.username} onChange={e => this.setState({ username: e.target.value })} />
+              <span className="error">{this.state.errors.username}</span>
+            </label>
+            </div>
+              </div>
+              <div className="row">
+            <div className="col-xs">
+          <label>
+            Password:
+            <input type="password" name="password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
+            <span className="error">{this.state.errors.password}</span>
+          </label>
+            </div>
+              </div>
 				    <div>
-				    	<RaisedButton label={loginBtnText} 
-				    		primary={true} 
-				    		type="submit" />
+				    	<button type="submit">{loginBtnText}</button>
 				    </div>
 			    </form>
 				</div>

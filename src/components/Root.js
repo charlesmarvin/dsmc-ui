@@ -7,15 +7,6 @@ import Error from './Error';
 import LoginView from './auth/LoginForm';
 import VerifyView from './auth/VerifyAccountForm';
 import Dashboard from './dashboard/Dashboard';
-// import {deepOrange500} from 'material-ui/styles/colors';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-const muiTheme = getMuiTheme({
-  palette: {
-    
-  },
-});
 
 const requireAuth = (store) => {
 	return (nextState, replace) => {
@@ -32,18 +23,20 @@ const requireAuth = (store) => {
 const Root = ({store}) => {
 	const history = syncHistoryWithStore(browserHistory, store);
 	return(
-		<MuiThemeProvider muiTheme={muiTheme}>
-			<Provider store={store}>
-				<Router history={history}>
-					<Route path="/" component={App}>
-						<IndexRoute component={Dashboard} onEnter={requireAuth(store)}/>
-						<Route path="/error" component={Error} />
-						<Route path="/login" component={LoginView} />
-						<Route path="/verify" component={VerifyView} />
-					</Route>
-				</Router>
-			</Provider>
-		</MuiThemeProvider>
+      <Provider store={store}>
+          <Router history={history}>
+              <Route path="/" component={App} breadcrumbIgnore>
+                  <IndexRoute component={Dashboard} name="Dashboard" /> //onEnter={requireAuth(store)}
+                  <Route path="error" component={Error} />
+                  <Route path="login" component={LoginView} name="Login" />
+                  <Route path="sessions" component={() => (<div>Sessions!</div>)} name="Sessions">
+                    <Route path="schedule" component={() => (<div>Schedule Session!!</div>)} name="Schedule"/>
+                  </Route>
+                  <Route path="verify" component={VerifyView} />
+                  <Route path="*" component={() => <span>404</span>} name="Not Found" />
+              </Route>
+          </Router>
+      </Provider>
 	);
 }
 

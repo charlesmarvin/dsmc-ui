@@ -1,0 +1,2 @@
+export const LAUNCHER_OPEN = 'LAUNCHER_OPEN';
+export const LAUNCHER_CLOSE = 'LAUNCHER_CLOSE';
