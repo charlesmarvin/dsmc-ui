@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import Breadcrumbs from 'react-router-breadcrumbs';
 import NavActionLauncher from './launcher/NavActionLauncher';
 class App extends Component {
   
@@ -9,20 +8,25 @@ class App extends Component {
     return (
     	<div className="wrap">
           <div className="row nav">
-            <div className="col-xs-4 col-sm-2 logo">
+            <div className="col-xs-3 logo">
               <Link to="/">WHEELS</Link>
             </div>
-            <div className="col-xs-12 last-xs col-sm-7">
-              <Breadcrumbs routes={this.props.routes} params={this.props.params} createSeparator=" / " />
-            </div>
-            <div className="col-xs-8 col-sm-3 last-sm text-right">
+            
+            <div className="col-xs-9 text-right">
               <Link to="">Profile</Link>
               <Link to="">Sign off</Link>
             </div>
           </div>
-              
+          <div className="row nav sub-nav">
+            <div className="col-xs">
+              <Link to="/">Dashboard</Link>
+              <Link to="students">Students</Link>
+              <Link to="instructors">Instructors</Link>
+              <Link to="packages">Packages</Link>
+            </div>
+          </div>
           <div className="row main">
-            <div className="col-xs col-sm-offset-2 col-sm-10">
+            <div className="col-xs">
               {this.props.children}
             </div>
           </div>

@@ -3,7 +3,8 @@ html,
       height: 100%;
       padding: 0;
       margin: 0;
-      font: 16px/25px "Helvetica Neue",Helvetica,Arial,sans-serif; 
+      font: 14px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      background-color: #F3F4F5;
     }
 #root {
   height: 100%;
@@ -16,26 +17,39 @@ html,
 .nav {
   height: 48px;
   align-items: center;
-  background-color: #FFFFFF;
-  font-size: .75rem;
+  background-color: #1E262E;
+  font-size: .9rem;
 }
 
-.nav a {
+.sub-nav {
+  background-color: #FFFFFF;
+}
+
+.nav a,
+.nav a:visited{
   text-decoration: none;
   margin-left: 1rem;
+  color: #FFFFFF;
+}
+.sub-nav a,
+.sub-nav a:visited{
+  color: #1E262E;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.nav a:hover {
+  color: black;
 }
 .nav .logo {
-  background-color: #1E262E;
   line-height: 48px;
   font-size: 1.1rem;
-  text-align: center;
 }
+
 .nav .logo a {
-  color: #FFFFFF;
+  color: #53B6E6;  
 }
     
     .main {
-      background-color: #FAFBFC;
       flex: 1;
     }
     .main .content {
@@ -46,7 +60,7 @@ html,
       overflow: hidden;
     }
 .upcoming-sessions .day {
-  border-top: 2px solid lightgrey;
+  border-top: 1px solid lightgrey;
 }
     .session-date {
       font-size: .8rem;
