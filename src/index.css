@@ -20,6 +20,9 @@ html,
   background-color: #1E262E;
   font-size: .9rem;
 }
+.nav .active {
+  border-bottom: 2px solid;
+}
 
 .sub-nav {
   background-color: #FFFFFF;

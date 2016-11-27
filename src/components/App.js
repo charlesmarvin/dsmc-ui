@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 import NavActionLauncher from './launcher/NavActionLauncher';
 class App extends Component {
   
@@ -9,7 +9,7 @@ class App extends Component {
     	<div className="wrap">
           <div className="row nav">
             <div className="col-xs-3 logo">
-              <Link to="/">WHEELS</Link>
+              <IndexLink to="dashboard">WHEELS</IndexLink>
             </div>
             
             <div className="col-xs-9 text-right">
@@ -19,10 +19,10 @@ class App extends Component {
           </div>
           <div className="row nav sub-nav">
             <div className="col-xs">
-              <Link to="/">Dashboard</Link>
-              <Link to="students">Students</Link>
-              <Link to="instructors">Instructors</Link>
-              <Link to="packages">Packages</Link>
+              <Link to="dashboard" activeClassName="active">Dashboard</Link>
+              <Link to="students" activeClassName="active">Students</Link>
+              <Link to="instructors" activeClassName="active">Instructors</Link>
+              <Link to="packages" activeClassName="active">Packages</Link>
             </div>
           </div>
           <div className="row main">

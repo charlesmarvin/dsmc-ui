@@ -26,10 +26,11 @@ const Root = ({store}) => {
 	return(
       <Provider store={store}>
           <Router history={history}>
-              <Route path="/" component={App} breadcrumbIgnore>
+              <Route component={App}>
                   <IndexRoute component={Dashboard} name="Dashboard" /> //onEnter={requireAuth(store)}
                   <Route path="error" component={Error} />
                   <Route path="login" component={LoginView} name="Login" />
+                  <Route path="dashboard" component={Dashboard} name="Dashboard" />
                   <Route path="students" component={StudentList} name="Students" />
                   <Route path="sessions" component={() => (<div>Sessions!</div>)} name="Sessions">
                     <Route path="schedule" component={() => (<div>Schedule Session!!</div>)} name="Schedule"/>

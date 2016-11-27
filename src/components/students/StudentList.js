@@ -26,7 +26,6 @@ class StudentList extends Component {
         <div className="row">
           <div className="col-xs">
             <div className="content">
-              <h3>Students</h3> 
               <div className="student-list">
                 {this.props.students.map((student) => {
                   return (
