@@ -1,168 +1,183 @@
 html,
-    body {
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      font: 14px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
-      background-color: #F3F4F5;
-    }
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font: 300 13px/25px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: #F3F4F5;
+}
+
 #root {
   height: 100%;
 }
-    .wrap {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+
+.wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .nav {
   height: 48px;
   align-items: center;
   background-color: #1E262E;
   font-size: .9rem;
 }
+
 .nav .active {
   border-bottom: 2px solid;
 }
 
 .sub-nav {
   background-color: #FFFFFF;
+  overflow: scroll;
 }
 
 .nav a,
-.nav a:visited{
+.nav a:visited {
   text-decoration: none;
   margin-left: 1rem;
   color: #FFFFFF;
 }
+
 .sub-nav a,
-.sub-nav a:visited{
+.sub-nav a:visited {
   color: #1E262E;
   text-transform: uppercase;
-  font-weight: 300;
 }
+
 .nav a:hover {
   color: black;
 }
+
 .nav .logo {
   line-height: 48px;
   font-size: 1.1rem;
 }
 
 .nav .logo a {
-  color: #53B6E6;  
+  color: #53B6E6;
 }
-    
-    .main {
-      flex: 1;
-    }
-    .main .content {
-      padding: 0 1rem;
-    }
-    .upcoming-sessions {
-      
-      overflow: hidden;
-    }
+
+.main {
+  flex: 1;
+}
+
+.main .content {
+  padding: 0 1rem;
+}
+
+.upcoming-sessions {
+  overflow: hidden;
+}
+
 .upcoming-sessions .day {
   border-top: 1px solid lightgrey;
 }
-    .session-date {
-      font-size: .8rem;
-      font-weight: 600;
-      padding: 1rem 0 0 0;
-      display: block
-    }
-    .session-time {
-      font-size: .8rem;
-      font-weight: 300;
-    }
-    .student-name {
-      display: block;
-      font-weight: 600;
-    }
-    .phone {
-      display: block;
-    }
-    .session-details {
-      padding: 1rem 0;
-      border-bottom: 1px dotted lightgrey;
-    }
-    .session-details.last {
-      border-bottom: none;
-    }
-    .student-info {
-      font-size: .9rem
-    }
+
+.session-date {
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 1rem 0 0 0;
+  display: block
+}
+
+.session-time {
+  font-size: .8rem;
+}
+
+.student-name {
+  display: block;
+}
+
+.phone {
+  display: block;
+}
+
+.session-details {
+  padding: 1rem 0;
+  border-bottom: 1px dotted lightgrey;
+}
+
+.session-details.last {
+  border-bottom: none;
+}
+
+.student-info {
+  font-size: .9rem
+}
+
 .action-button-container {
   position: fixed;
   z-index: 100;
   right: 2em;
   bottom: 2em;
 }
+
 .action-button-container .action-button {
   background-color: green;
   width: 50px;
   height: 50px;
-    border-radius: 50%;
-    overflow:hidden;
+  border-radius: 50%;
+  overflow: hidden;
   border: none;
 }
 
-
-.overlay{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: rgba(0,0,0,0.9);
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
   z-index: 100;
 }
 
-.overlay label{
-	width: 32px;
-	height: 32px;
-	position: absolute;
-	right: 40px;
-	top: 20px;
-	background: url('http://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png');
+.overlay label {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  background: url('http://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png');
   background-size: contain;
-	z-index: 100;
-  cursor:pointer;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .overlay nav {
-	text-align: center;
-	position: relative;
-	top: 50%;
-	height: 60%;
-	font-size: 24px;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  font-size: 24px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .overlay ul {
-	list-style: none;
-	padding: 0;
-	margin: 0 auto;
-	display: inline-block;
-	height: 100%;
-	position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
 }
 
 .overlay ul li {
-	display: block;
-	height: 20%;
-	height: calc(100% / 5);
-	min-height: 54px;
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+  min-height: 54px;
 }
 
 .overlay ul li a {
-	font-weight: 300;
-	display: block;
-	color: white;
-  text-decoration:none;
-	transition: color 0.2s;
-  text-transform:uppercase;
+  font-weight: 300;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  text-transform: uppercase;
 }
 
 .overlay ul li a:hover,
@@ -171,37 +186,51 @@ html,
 }
 
 .overlay-hugeinc nav {
-	-moz-perspective: 300px;
+  -moz-perspective: 300px;
 }
 
 .overlay-hugeinc nav ul {
-/*
+  /*
 	opacity: 0.4;
 	transform: translateY(-25%) rotateX(35deg);
 	transition: transform 0.5s, opacity 0.5s;
 */
 }
 
+h3 {
+  font-size: .9rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
 
-
-
-
-    h3 {
-      font-size: .9rem;
-      text-transform: uppercase;
-      font-weight: 300;
-    }
 .text-right {
   text-align: right;
   padding-right: 2rem;
 }
 
-.student-list {
-}
+.student-list {}
+
 .student-list-item {
   margin: auto -.5rem;
   border-bottom: 1px solid lightgrey;
 }
+
 .box {
   padding: .5rem 0;
+}
+
+.form input[type=text],
+.form input[type=email],
+.form input[type=tel],
+.form input[type=password],
+.form input[type=search] {
+  appearance: none;
+  padding: 0 10px;
+  border: 1px solid #F4F4F4;
+  border-radius: 0;
+  width: 100%;
+  font-size: 14px;
+  height: 45px;
+  background-color: #FFFFFF;
+  box-sizing: border-box
 }

@@ -8,6 +8,7 @@ import LoginView from './auth/LoginForm';
 import VerifyView from './auth/VerifyAccountForm';
 import Dashboard from './dashboard/Dashboard';
 import StudentList from './students/StudentList';
+import StudentEditView from './students/StudentEditView';
 
 const requireAuth = (store) => {
 	return (nextState, replace) => {
@@ -32,6 +33,7 @@ const Root = ({store}) => {
                   <Route path="login" component={LoginView} name="Login" />
                   <Route path="dashboard" component={Dashboard} name="Dashboard" />
                   <Route path="students" component={StudentList} name="Students" />
+      <Route path="students/:id" component={StudentEditView} name="Edit Student"/>
                   <Route path="sessions" component={() => (<div>Sessions!</div>)} name="Sessions">
                     <Route path="schedule" component={() => (<div>Schedule Session!!</div>)} name="Schedule"/>
                   </Route>

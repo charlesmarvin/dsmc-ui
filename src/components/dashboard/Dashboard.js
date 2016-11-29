@@ -15,10 +15,18 @@ class Dashboard extends Component {
               <span className="session-time">{session.time}</span>
             </div>
             <div className="col-xs-12 col-sm-10">
-              <div className="student-info">
-                <span className="student-name">{session.studentName}</span>
-                <span className="phone">{session.studentContact}</span>
-                <span className="address">{session.pickupLocation}</span>
+              <div className="row student-info">
+                <div className="col-xs">
+                  <span className="student-name">{session.studentName}</span>
+                </div>
+                
+                <div className="col-xs">
+                  <span className="phone">{session.studentContact}</span>
+                </div>
+                
+                <div className="col-xs">
+                  <span className="address">{session.pickupLocation}</span>
+                </div>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, IndexLink } from 'react-router';
 import NavActionLauncher from './launcher/NavActionLauncher';
 class App extends Component {
-  
+
   render() {
     return (
     	<div className="wrap">
@@ -11,7 +11,7 @@ class App extends Component {
             <div className="col-xs-3 logo">
               <IndexLink to="dashboard">WHEELS</IndexLink>
             </div>
-            
+
             <div className="col-xs-9 text-right">
               <Link to="">Profile</Link>
               <Link to="">Sign off</Link>
@@ -42,9 +42,9 @@ App.propTypes = {
     dashboard: React.PropTypes.object
 };
 
-const mapStateToProps = (state) => ({ 
+const mapStateToProps = (state) => ({
 	profile: state.profile,
-    dashboard: state.dashboard
+  dashboard: state.dashboard
 });
 
 App = connect(mapStateToProps)(App);

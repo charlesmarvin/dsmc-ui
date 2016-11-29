@@ -22,6 +22,27 @@ export const load = () => {
 	};
 };
 
+const onLoadStudentSuccess = (response) => {
+	return {
+		type: actions.STUDENT_LOAD_SUCCESS,
+		data: response
+	}
+};
+const onLoadStudentFailure = (error) => {
+	return {
+		type: actions.STUDENT_LOAD_FAILURE
+	}
+};
+
+export const loadStudent = (id) => {
+	return function (dispatch, getState) {
+      dispatch({type: actions.STUDENT_LOAD_REQUEST});
+      return get(`/students/${id}`)
+    	.then(response => dispatch(onLoadStudentSuccess(response)))
+	    .catch(error => dispatch(onLoadStudentFailure(error)));
+	};
+};
+
 export const create = (student) => {
 	
 };

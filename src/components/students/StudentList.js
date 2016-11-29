@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { load } from './actions';
 	
 class StudentList extends Component {
@@ -30,17 +31,19 @@ class StudentList extends Component {
                 {this.props.students.map((student) => {
                   return (
                     <div className="row student-list-item" key={student.id}>
-                      <div className="col-xs-12 col-sm-4">
-                        <div className="box">
+                      <div className="col-xs col-sm-4">
+                        <div className="box student-name">
+                          <Link to={`students/${student.id}`}>
                           {student.firstName} {student.lastName}
+                          </Link>
                         </div>
                       </div>
-                      <div className="col-xs-12 col-sm-4">
+                      <div className="col-xs col-sm-4">
                         <div className="box">
                           {student.email}
                         </div>
                       </div>
-                      <div className="col-xs-12 col-sm-4">
+                      <div className="col-xs col-sm-4">
                         <div className="box">
                           {this.renderPhoneContactList(student.contactNumbers)}
                         </div>
